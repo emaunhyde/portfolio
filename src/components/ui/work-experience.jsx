@@ -1,12 +1,4 @@
-import {
-  Box,
-  Flex,
-  Image,
-  Link,
-  Stack,
-  Tag,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Image, Link, Stack, Tag, Text } from "@chakra-ui/react";
 import FrostedCard from "@/components/ui/frosted-card";
 import ExternalLink from "@/components/ui/external-link";
 
@@ -20,16 +12,12 @@ export default function WorkExperience({
   dateRange,
   description,
   contribution,
-  technologies = []
+  technologies = [],
 }) {
   return (
     <FrostedCard p={6}>
       <Flex pb={4} justifyContent="space-between" alignItems="center">
-        <Link
-          href={companyLink}
-          isExternal
-          style={{ textDecoration: "none" }}
-        >
+        <Link href={companyLink} isExternal style={{ textDecoration: "none" }}>
           <Image
             src={companyLogo}
             alt={companyLogoAlt}
@@ -37,9 +25,7 @@ export default function WorkExperience({
             opacity="0.8"
           />
         </Link>
-        <ExternalLink href={externalLink}>
-          {externalLinkText}
-        </ExternalLink>
+        <ExternalLink href={externalLink}>{externalLinkText}</ExternalLink>
       </Flex>
       <Text
         fontSize={["xl", "2xl", "3xl", "3xl"]}
@@ -75,13 +61,7 @@ export default function WorkExperience({
       >
         {contribution}
       </Text>
-      <Stack
-        direction={["row"]}
-        spacing={2}
-        pt={4}
-        flexWrap="wrap"
-        gap={2}
-      >
+      <Stack direction={["row"]} spacing={2} pt={4} flexWrap="wrap" gap={2}>
         {technologies.map((tech, index) => (
           <Tag
             key={index}

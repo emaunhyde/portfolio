@@ -1,6 +1,16 @@
 "use client";
 
-import { Box, Grid, GridItem, Icon, Image, Link, Stack, Text, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Icon,
+  Image,
+  Link,
+  Stack,
+  Text,
+  Button,
+} from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import CursorLight from "@/components/ui/cursor";
@@ -9,24 +19,24 @@ const socialLinks = [
   {
     href: "https://www.linkedin.com/in/emaunhyde/",
     icon: FaLinkedin,
-    label: "Linkedin profile"
+    label: "Linkedin profile",
   },
   {
     href: "https://github.com/emaunhyde",
     icon: FaGithub,
-    label: "Github profile"
+    label: "Github profile",
   },
   {
     href: "mailto:emaunaridnihyde@gmail.com",
     icon: MdAlternateEmail,
-    label: "Email"
-  }
+    label: "Email",
+  },
 ];
 
 const navItems = [
   { id: "intro", label: "Intro" },
   { id: "background", label: "Background" },
-  { id: "about", label: "About" }
+  { id: "about", label: "About" },
 ];
 
 function NavigationItem({ id, label, activeSection, onClick, navColor }) {
@@ -60,8 +70,8 @@ function NavigationItem({ id, label, activeSection, onClick, navColor }) {
 
 function SocialIcon({ href, icon, label }) {
   return (
-    <Link 
-      href={href} 
+    <Link
+      href={href}
       isExternal
       aria-label={label}
       minH={["2.75rem", "2.75rem"]}
@@ -73,7 +83,7 @@ function SocialIcon({ href, icon, label }) {
       _focus={{
         boxShadow: "0 0 0 0.125rem",
         boxShadowColor: "brand.alabaster",
-        outline: "none"
+        outline: "none",
       }}
     >
       <Icon
@@ -113,12 +123,7 @@ export default function Navigation({ activeSection, onNavigate }) {
       </Box>
 
       {/* Left Column - Fixed Nav */}
-      <GridItem
-        position="sticky"
-        top="6rem"
-        height="fit-content"
-        zIndex={20}
-      >
+      <GridItem position="sticky" top="6rem" height="fit-content" zIndex={20}>
         <CursorLight />
         <Stack spacing={2}>
           {navItems.map((item) => (
@@ -149,7 +154,11 @@ export default function Navigation({ activeSection, onNavigate }) {
             justifyContent="flex-start"
             mb={[2, 2, 6, 6]}
             textDecoration="none"
-            _hover={{ opacity: "0.6", bg: "transparent", textDecoration: "none" }}
+            _hover={{
+              opacity: "0.6",
+              bg: "transparent",
+              textDecoration: "none",
+            }}
             aria-label="Download resume PDF"
           >
             Resumé

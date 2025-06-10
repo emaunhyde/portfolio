@@ -13,24 +13,24 @@ export default function ModernCursor() {
 
   useEffect(() => {
     if (!isClient) return;
-    
+
     let animationFrame;
 
     const updateMousePosition = (e) => {
       const newPosition = { x: e.clientX, y: e.clientY };
       setMousePosition(newPosition);
-      
+
       // Add to trail
-      setTrail(prevTrail => {
+      setTrail((prevTrail) => {
         const newTrail = [newPosition, ...prevTrail.slice(0, 15)]; // Keep 15 trail points
         return newTrail;
       });
     };
 
-    document.addEventListener('mousemove', updateMousePosition);
+    document.addEventListener("mousemove", updateMousePosition);
 
     return () => {
-      document.removeEventListener('mousemove', updateMousePosition);
+      document.removeEventListener("mousemove", updateMousePosition);
       if (animationFrame) {
         cancelAnimationFrame(animationFrame);
       }
@@ -38,8 +38,14 @@ export default function ModernCursor() {
   }, [isClient]);
 
   const colors = [
-    '#ACBE5B', '#ff6b6b', '#4ecdc4', '#45b7d1', 
-    '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'
+    "#ACBE5B",
+    "#ff6b6b",
+    "#4ecdc4",
+    "#45b7d1",
+    "#96ceb4",
+    "#feca57",
+    "#ff9ff3",
+    "#54a0ff",
   ];
 
   if (!isClient) {
@@ -60,17 +66,17 @@ export default function ModernCursor() {
         <div
           key={`trail-${index}`}
           style={{
-            position: 'fixed',
+            position: "fixed",
             left: point.x,
             top: point.y,
-            width: '3px',
-            height: '3px',
+            width: "3px",
+            height: "3px",
             backgroundColor: colors[index % colors.length],
-            transform: 'translate(-50%, -50%)',
-            opacity: (trail.length - index) / trail.length * 0.7,
+            transform: "translate(-50%, -50%)",
+            opacity: ((trail.length - index) / trail.length) * 0.7,
             zIndex: 100,
-            pointerEvents: 'none',
-            transition: 'opacity 0.1s ease-out',
+            pointerEvents: "none",
+            transition: "opacity 0.1s ease-out",
           }}
         />
       ))}
@@ -78,15 +84,15 @@ export default function ModernCursor() {
       {/* Main cursor - rendered last so it appears on top */}
       <div
         style={{
-          position: 'fixed',
+          position: "fixed",
           left: mousePosition.x,
           top: mousePosition.y,
-          width: '8px',
-          height: '8px',
-          backgroundColor: '#ACBE5B',
-          transform: 'translate(-50%, -50%)',
+          width: "8px",
+          height: "8px",
+          backgroundColor: "#ACBE5B",
+          transform: "translate(-50%, -50%)",
           zIndex: 101,
-          pointerEvents: 'none',
+          pointerEvents: "none",
         }}
       />
     </>

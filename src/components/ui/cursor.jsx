@@ -12,7 +12,7 @@ export default function CursorLight() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -30,7 +30,6 @@ export default function CursorLight() {
       borderRadius="50%"
       opacity="0.1"
       bgColor="brand.cream"
-       // White at 20% opacity lightens the background.
       filter="blur(100px)"
       zIndex={-1}
     />

@@ -1,12 +1,12 @@
 import { Button, Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-export default function ExternalLink({ 
-  href, 
-  children, 
-  variant = "ghost", 
-  colorScheme = "whiteAlpha", 
-  size = "sm" 
+export default function ExternalLink({
+  href,
+  children,
+  variant = "ghost",
+  colorScheme = "whiteAlpha",
+  size = "sm",
 }) {
   return (
     <Button variant={variant} colorScheme={colorScheme} size={size}>

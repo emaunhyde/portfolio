@@ -14,9 +14,9 @@ export default function Intro() {
         fontFamily="heading"
         lineHeight={["140%", "140%", "120%", "120%"]}
       >
-        I'm an interdisciplinary software engineer blending 
-        ten years of visual design experience with full-stack engineering
-        rigor to turn ideas into products that are as intuitive as they are functional.
+        I'm an interdisciplinary software engineer blending ten years of visual
+        design experience with full-stack engineering rigor to turn ideas into
+        products that are as intuitive as they are functional.
       </Text>
     </Box>
   );

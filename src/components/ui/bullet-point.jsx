@@ -5,8 +5,17 @@ export default function BulletPoint({ icon, title, description }) {
   return (
     <ListItem pb={2}>
       <FrostedCard p={4} interactive={false}>
-        <Flex direction="row" pb={3} alignItems="center" justifyContent={["center", "center", "flex-start"]}>
-          <ListIcon as={icon} color="brand.pale_green" fontSize={["md", "sm", "xs", "lg"]} />
+        <Flex
+          direction="row"
+          pb={3}
+          alignItems="center"
+          justifyContent={["center", "center", "flex-start"]}
+        >
+          <ListIcon
+            as={icon}
+            color="brand.pale_green"
+            fontSize={["md", "sm", "xs", "lg"]}
+          />
           <Text
             fontSize={["md", "sm", "xs", "sm"]}
             color="brand.alabaster"
