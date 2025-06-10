@@ -80,17 +80,17 @@ export default function Home() {
         {/* Content */}
         <GridItem 
           colStart={[1, 1, 2, 2]} 
-          px={[5, 5, 0, 0]} 
-          mt={[12, 12, 0, 0]}
+          px={[6, 6, 0, 0]} 
+          mt={[16, 16, 0, 0]}
         >
           <Box>
             <Section id="intro" mt="0">
               <Intro />
             </Section>
-            <Section id="background" mt={["6rem", "6rem", "15rem", "15rem"]}>
+            <Section id="background" mt={["8rem", "8rem", "15rem", "15rem"]}>
               <Background />
             </Section>
-            <Section id="about" mt={["6rem", "6rem", "15rem", "15rem"]}>
+            <Section id="about" mt={["8rem", "8rem", "15rem", "15rem"]}>
               <About />
             </Section>
           </Box>

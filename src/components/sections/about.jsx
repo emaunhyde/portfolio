@@ -57,10 +57,10 @@ export default function About() {
         {/* Contact Section */}
         <Box 
           mt={["4rem", "8rem"]}
-          mb={[0, "8rem"]}
+          mb={["2rem", "8rem"]}
         >
           <FrostedCard 
-            p={6} 
+            p={[4, 6]} 
             interactive={false}
             backgroundColor="rgba(172, 190, 91, 0.1)"
           >
@@ -79,7 +79,7 @@ export default function About() {
                 opacity="0.8"
                 maxWidth={["100%", "100%", "90%", "90%"]}
               >
-                I'm exploring my next challenge and would love to hear from you. If you're looking for someone who can spar on architecture diagrams, critique a color palette, or just geek out over the future of AGI, let's talk.
+                I'm currently seeking my next challenge and would love to hear from you. If you're looking for someone who can spar on architecture diagrams, critique a color palette, or just geek out over the future of AGI, let's talk.
               </Text>
             </Flex>
           </FrostedCard>

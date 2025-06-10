@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Grid, GridItem, Icon, Image, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Icon, Image, Link, Stack, Text, Button } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import CursorLight from "@/components/ui/cursor";
@@ -31,8 +31,8 @@ const navItems = [
 
 function NavigationItem({ id, label, activeSection, onClick, navColor }) {
   return (
-    <Text
-      cursor="pointer"
+    <Button
+      variant="ghost"
       onClick={() => onClick(id)}
       opacity={activeSection === id ? "1" : "0.3"}
       textTransform="uppercase"
@@ -40,29 +40,50 @@ function NavigationItem({ id, label, activeSection, onClick, navColor }) {
       fontSize="xs"
       fontWeight={activeSection === id ? "semibold" : "regular"}
       color={navColor}
+      bg="transparent"
+      p={2}
+      pl={0}
+      h="auto"
+      justifyContent="flex-start"
+      fontFamily="heading"
       _hover={
         activeSection === id
-          ? { opacity: "1" }
-          : { opacity: "0.6" }
+          ? { opacity: "1", bg: "transparent" }
+          : { opacity: "0.6", bg: "transparent" }
       }
+      aria-label={`Navigate to ${label} section`}
     >
       {label}
-    </Text>
+    </Button>
   );
 }
 
 function SocialIcon({ href, icon, label }) {
   return (
-    <Link href={href} isExternal>
+    <Link 
+      href={href} 
+      isExternal
+      aria-label={label}
+      minH={["2.75rem", "2.75rem"]}
+      minW={["2.75rem", "2.75rem"]}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      borderRadius="md"
+      _focus={{
+        boxShadow: "0 0 0 0.125rem",
+        boxShadowColor: "brand.alabaster",
+        outline: "none"
+      }}
+    >
       <Icon
-        aria-label={label}
-        fontSize={["1.2rem", "1.35rem"]}
+        as={icon}
+        fontSize={["1.5rem", "1.5rem"]}
         opacity="0.5"
         _hover={{ color: "brand.pale_green", opacity: 1 }}
         color="brand.alabaster"
-      >
-        {icon()}
-      </Icon>
+        role="img"
+      />
     </Link>
   );
 }
@@ -110,23 +131,29 @@ export default function Navigation({ activeSection, onNavigate }) {
               navColor={navColor}
             />
           ))}
-          <Text
+          <Button
+            as={Link}
+            href="/eh_resume.pdf"
+            target="_blank"
+            variant="ghost"
             opacity="0.3"
             textTransform="uppercase"
             letterSpacing="0.10em"
             fontSize="xs"
+            fontWeight="regular"
             color={navColor}
-            _hover={{ opacity: "0.6" }}
+            bg="transparent"
+            p={2}
+            pl={0}
+            h="auto"
+            justifyContent="flex-start"
             mb={[2, 2, 6, 6]}
+            textDecoration="none"
+            _hover={{ opacity: "0.6", bg: "transparent", textDecoration: "none" }}
+            aria-label="Download resume PDF"
           >
-            <Link
-              href="/eh_resume.pdf"
-              target="_blank"
-              style={{ textDecoration: "none" }}
-            >
-              Resumé
-            </Link>
-          </Text>
+            Resumé
+          </Button>
         </Stack>
 
         <Stack direction="row" spacing={4} mt={[4, 4, 6, 6]}>
@@ -144,7 +171,8 @@ export default function Navigation({ activeSection, onNavigate }) {
           color="brand.alabaster"
           fontSize="xs"
           mt={[8, 8, 12, 12]}
-          opacity="0.2"
+          opacity="0.3"
+          fontFamily="mono"
         >
           Mocked up in Figma, and coded in Cursor. Built with Next.js +
           ChakraUI, then deployed with Vercel.

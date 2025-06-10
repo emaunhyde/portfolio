@@ -3,7 +3,6 @@
 import { Box } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 
-// Define the keyframes for the pulse animation
 const pulse = keyframes`
   0% {
     opacity: 0.6;
@@ -16,12 +15,10 @@ const pulse = keyframes`
 `;
 
 export default function GlowingDot() {
-  // Combine the keyframes with duration, timing, and repetition
   const pulseAnimation = `${pulse} 2.5s cubic-bezier(0.1, 0.5, 0.6, 1) infinite`;
 
   return (
-    <Box position="relative" w="50px" h="50px" zIndex={20}>
-      {/* The expanding, fading circle */}
+    <Box position="relative" w="2rem" h="2rem" zIndex={20}>
       <Box
         position="absolute"
         top="50%"
@@ -33,7 +30,6 @@ export default function GlowingDot() {
         bg="brand.pale_green"
         animation={pulseAnimation}
       />
-      {/* The static dot in the center */}
       <Box
         position="absolute"
         top="50%"
