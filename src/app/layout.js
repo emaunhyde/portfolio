@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Providers from "./providers";
 import theme from "./theme";
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true}>
         <Providers theme={theme}>{children}</Providers>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
