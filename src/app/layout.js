@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import Providers from "./providers";
 import theme from "./theme";
 
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <Providers theme={theme}>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
