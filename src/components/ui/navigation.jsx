@@ -11,20 +11,26 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import CursorLight from "@/components/ui/cursor";
 
 const socialLinks = [
+
+  {
+    href: "https://github.com/emaunhyde",
+    icon: FaGithub,
+    label: "Github profile",
+  },
   {
     href: "https://www.linkedin.com/in/emaunhyde/",
     icon: FaLinkedin,
     label: "Linkedin profile",
   },
   {
-    href: "https://github.com/emaunhyde",
-    icon: FaGithub,
-    label: "Github profile",
+    href: "https://www.instagram.com/maungrove/",
+    icon: FaInstagram,
+    label: "Instagram profile",
   },
   {
     href: "mailto:emaunaridnihyde@gmail.com",
@@ -80,11 +86,6 @@ function SocialIcon({ href, icon, label }) {
       alignItems="center"
       justifyContent="center"
       borderRadius="md"
-      _focus={{
-        boxShadow: "0 0 0 0.125rem",
-        boxShadowColor: "brand.alabaster",
-        outline: "none",
-      }}
     >
       <Icon
         as={icon}
@@ -165,7 +166,7 @@ export default function Navigation({ activeSection, onNavigate }) {
           </Button>
         </Stack>
 
-        <Stack direction="row" spacing={4} mt={[4, 4, 6, 6]}>
+        <Stack direction="row" spacing={1} mt={[4, 4, 6, 6]}>
           {socialLinks.map((link) => (
             <SocialIcon
               key={link.href}

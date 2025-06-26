@@ -14,19 +14,7 @@ export default function About() {
       flexDirection="column"
       py={[8, 8, 0, 0]}
     >
-      <Flex
-        direction={["column", "column", "row", "row"]}
-        gap={[6, 6, 12, 12]}
-        alignItems="flex-start"
-      >
-        <Image
-          src="/headshot.jpg"
-          alt="Portfolio Profile Photo"
-          maxWidth={["100%", "100%", "18rem", "18rem"]}
-          aspectRatio="5/7"
-          objectFit="cover"
-          borderRadius="lg"
-        />
+
         <Flex direction="column" gap={4}>
           <List spacing={3}>
             <BulletPoint
@@ -46,10 +34,9 @@ export default function About() {
             />
           </List>
         </Flex>
-      </Flex>
 
       {/* Contact Section */}
-      <Box mt={["4rem", "8rem"]} mb={["2rem", "8rem"]}>
+      <Box mt={["4rem", "12rem"]} mb={["2rem", "8rem"]}>
         <FrostedCard
           p={[4, 6]}
           interactive={false}

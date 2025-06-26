@@ -90,7 +90,7 @@ export default function Home() {
             <Section id="background" mt={["8rem", "8rem", "15rem", "15rem"]}>
               <Background />
             </Section>
-            <Section id="about" mt={["8rem", "8rem", "15rem", "15rem"]}>
+            <Section id="about" mt={["8rem", "8rem", "12rem", "12rem"]}>
               <About />
             </Section>
           </Box>
